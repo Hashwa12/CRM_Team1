@@ -176,10 +176,14 @@ public class SignUp extends JFrame {
 				String email = textField_2.getText();
 				String mobile = textField_3.getText();
 				String role = comboBox.getSelectedItem().toString();
-				Pattern p = Pattern.compile("[0-9]");
-				Matcher m = p.matcher(mobile);
-				boolean match = m.matches();
+				
+				  Pattern p = Pattern.compile("\\d"); 
+				  Matcher m = p.matcher(mobile);
+				  boolean match = m.find();
+				 
 				int mobilenumber = mobile.length();
+				
+				System.out.println(username+"\t"+password+"\t"+email+"\t"+mobilenumber+"\t"+role+"\t"+match);
 
 				int passlength = password.length();
 				if (username.trim().isEmpty() || username.length() == 0) {
@@ -200,7 +204,7 @@ public class SignUp extends JFrame {
 					emailmsg.setText("* MailID should ends with gmail.com or yahoo.com");
 					textField_2.setBorder(new LineBorder(Color.RED, 1));
 				}
-				if ((mobilenumber == 10) && (match == true)) {
+				if ((mobilenumber == 10)&&(match==true) ) {
 
 					mobilemsg.setText("");
 				} else {
@@ -216,7 +220,7 @@ public class SignUp extends JFrame {
 
 				if ((username.length() > 0) && (passlength > 8 && passlength < 15)
 						&& (email.endsWith("@gmail.com") || email.endsWith("@yahoo.com"))
-						&& ((mobilenumber == 10) && (match = true)) && (role.length() > 0)) {
+						&& ((mobilenumber == 10) && (match == true)) && (role.length() > 0)) {
 					if (role.equals("ADMIN")) {
 						int status;
 						try {
@@ -245,7 +249,7 @@ public class SignUp extends JFrame {
 
 							e.printStackTrace();
 						}
-					} else {
+					} else if(!role.equals("ADMIN")){
 						int status;
 						try {
 							status = SignupDB.UserSignUp(username, password, email, mobile, role);

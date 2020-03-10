@@ -12,7 +12,7 @@ public class UserDB
 	{
 		
 		Class.forName("com.mysql.jdbc.Driver");
-		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/crm_team_4","root","0");
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/crm_team1","root","Mysql@1234");
 		PreparedStatement ps= con.prepareStatement("select * from campaignowner");
 		ResultSet rs=ps.executeQuery();
 		while(rs.next())
@@ -26,7 +26,7 @@ public class UserDB
 	{
 		int status=0;
 		Class.forName("com.mysql.jdbc.Driver");
-		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/crm_team_4","root","0");
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/crm_team1","root","Mysql@1234");
 		PreparedStatement ps= con.prepareStatement("insert into campaign(campaignowner,campaignname,startdate,enddate,typeofcampaign,status,discription) values(?,?,?,?,?,?,?)");
 		ps.setString(1, ownername);
 		ps.setString(2, name);

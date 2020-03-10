@@ -11,8 +11,8 @@ public class SignupDB {
 	{
 		int status=0;
 		Class.forName("com.mysql.jdbc.Driver");
-		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/crm_team_4","root","0");
-		PreparedStatement ps= con.prepareStatement("insert into signup_admin(username,password,email,mobile,role) values(?,?,?,?,?)");
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/crm_team1","root","Mysql@1234");
+		PreparedStatement ps= con.prepareStatement("insert into signup_admin(UserName,Password,Email,Mobile,role) values(?,?,?,?,?)");
 		ps.setString(1, username);
 		ps.setString(2, password);
 		ps.setString(3, email);
@@ -28,7 +28,7 @@ public class SignupDB {
 	{
 		int status=0;
 		Class.forName("com.mysql.jdbc.Driver");
-		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/crm_team_4","root","0");
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/crm_team1","root","Mysql@1234");
 		PreparedStatement ps= con.prepareStatement("insert into signup_user(username,password,email,mobile,role) values(?,?,?,?,?)");
 		ps.setString(1, username);
 		ps.setString(2, password);
@@ -45,7 +45,7 @@ public class SignupDB {
 	{
 		boolean user=false;
 		Class.forName("com.mysql.jdbc.Driver");
-		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/crm_team_4","root","0");
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/crm_team1","root","Mysql@1234");
 		PreparedStatement ps= con.prepareStatement("select * from signup_admin where username=?");
 		ps.setString(1, username);
 		ResultSet rs=ps.executeQuery();
@@ -56,7 +56,7 @@ public class SignupDB {
 	{
 		boolean pass=false;
 		Class.forName("com.mysql.jdbc.Driver");
-		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/crm_team_4","root","0");
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/crm_team1","root","Mysql@1234");
 		PreparedStatement ps= con.prepareStatement("select * from signup_admin where password=?");
 		ps.setString(1, password);
 		ResultSet rs=ps.executeQuery();
@@ -68,7 +68,7 @@ public class SignupDB {
 	{
 		boolean user=false;
 		Class.forName("com.mysql.jdbc.Driver");
-		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/crm_team_4","root","0");
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/crm_team1","root","Mysql@1234");
 		PreparedStatement ps= con.prepareStatement("select * from signup_user where username=?");
 		ps.setString(1, username);
 		ResultSet rs=ps.executeQuery();
@@ -79,7 +79,7 @@ public class SignupDB {
 	{
 		boolean pass=false;
 		Class.forName("com.mysql.jdbc.Driver");
-		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/crm_team_4","root","0");
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/crm_team1","root","Mysql@1234");
 		PreparedStatement ps= con.prepareStatement("select * from signup_user where password=?");
 		ps.setString(1, password);
 		ResultSet rs=ps.executeQuery();
