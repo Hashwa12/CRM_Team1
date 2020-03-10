@@ -15,6 +15,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
@@ -28,7 +29,7 @@ public class SignUp extends JFrame {
 	public static SignUp frame;
 	private JPanel contentPane;
 	private JTextField textField;
-	private JTextField textField_1;
+	private JPasswordField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
 
@@ -138,7 +139,7 @@ public class SignUp extends JFrame {
 		contentPane.add(textField);
 		textField.setColumns(10);
 
-		textField_1 = new JTextField();
+		textField_1 = new JPasswordField();
 		textField_1.setBorder(new LineBorder(Color.darkGray, 1));
 		textField_1.setBounds(350, 231, 175, 26);
 		contentPane.add(textField_1);
